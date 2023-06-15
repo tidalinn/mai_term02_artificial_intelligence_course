@@ -25,7 +25,7 @@ class RANSAC:
 
     def __init__(self) -> None:
         self.n_iters: int = 0
-        self.in_ratio: float = 0.0
+        self.inliers_ratio: float = 0.0
         self.epsilon: float = 0.0
         
         self.best_params: dict = {} # kx + b -> k, b
@@ -38,7 +38,7 @@ class RANSAC:
     def set_case(self, 
                  points: np.ndarray, 
                  n_iters: int = 100, 
-                 in_ratio: float = 0.8, 
+                 inliers_ratio: float = 0.8, 
                  epsilon: float = 0.1) -> None:
         
         '''Устанавливает массив точек и проверяет, нужная ли у него размерность
@@ -46,7 +46,7 @@ class RANSAC:
         Args:
             points (np.ndarray): Массив координат точек
             n_iter (float, optional): Количество итераций. Defaults to 100
-            in_ratio (float, optional): Доля принадлежащих к прямой точек. Defaults to 0.8
+            inliers_ratio (float, optional): Доля принадлежащих к прямой точек. Defaults to 0.8
             epsilon (float, optional): Порог, отсекающий принадлежность точек к прямой. Defaults to 0.1
         
         Returns:
@@ -55,7 +55,7 @@ class RANSAC:
 
         self.points = points
         self.n_iters = n_iters
-        self.in_ratio = in_ratio
+        self.inliers_ratio = inliers_ratio
         self.epsilon = epsilon
         
 
@@ -99,7 +99,7 @@ class RANSAC:
             self.inliers = inliers
             self.outliers = outliers
             
-            if (1 - out_ratio) > self.in_ratio:
+            if (1 - out_ratio) > self.inliers_ratio:
                 break
 
         return self.best_params

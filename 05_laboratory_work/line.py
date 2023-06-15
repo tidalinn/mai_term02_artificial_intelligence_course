@@ -14,7 +14,7 @@ class Line():
         self.b = None
         
 
-    def estimate_params(self, shift: float = 0.000001) -> None:
+    def estimate_params(self, shift: float = 1e-6) -> None:
         '''Оценка параметров прямой по двум точкам
 
         Args:
@@ -40,7 +40,7 @@ class Line():
     def divide_points(self, 
                       points: np.ndarray, 
                       in_out_threshold: float = 0.1, 
-                      shift: float = 0.000001) -> Tuple[np.ndarray, np.ndarray]: 
+                      shift: float = 1e-6) -> Tuple[np.ndarray, np.ndarray]: 
         
         '''Разделение точек по принадлежности к прямой
 

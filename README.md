@@ -30,5 +30,5 @@ Contains folders and files with laboratory works.
 * `03_laboratory_work` - stores laboratory work on "RandomForestClassifier"
 * `04_laboratory_work` - stores laboratory work on "DeepFake"
 * `05_laboratory_work` - stores laboratory work on "RANSAC"
-* `06_laboratory_work` - stores laboratory work on "onnx"
+* `06_laboratory_work` - stores laboratory work on "ONNX"
 * `07_laboratory_work` - stores laboratory work on "homography"

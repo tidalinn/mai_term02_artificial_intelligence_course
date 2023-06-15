@@ -4,15 +4,12 @@
 import torch
 from torch.autograd import Variable
 
-from variables import model
+from variables import model, device
 from cifar10_downloader import test_loader
 
 
 # Function to test the model with the test dataset and print the accuracy for the test images
 def test_accuracy():
-
-    # Define your execution device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model.eval()
     accuracy = 0.0

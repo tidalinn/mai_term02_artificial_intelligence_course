@@ -4,7 +4,7 @@
 import torch
 from torch.autograd import Variable
 
-from variables import model, optimizer, loss_fn
+from variables import model, optimizer, loss_fn, device
 from test_accuracy import test_accuracy
 from save_model import save_model
 from cifar10_downloader import train_loader
@@ -16,7 +16,6 @@ def train(num_epochs):
     best_accuracy = 0.0
 
     # Define your execution device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print('The model will be running on', device, 'device\n')
     
     # Convert model parameters and buffers to CPU or Cuda

@@ -8,14 +8,11 @@ from torch.autograd import Variable
 
 from image_show import image_show
 from cifar10_downloader import test_loader
-from variables import batch_size, classes, model
+from variables import batch_size, classes, model, device
 
 
 # Function to test the model with a batch of images and show the labels predictions
 def test_batch():
-
-    # Define your execution device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # get batch of images from the test DataLoader  
     images, labels = next(iter(test_loader))

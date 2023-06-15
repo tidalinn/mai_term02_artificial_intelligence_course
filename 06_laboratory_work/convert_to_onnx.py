@@ -5,14 +5,11 @@ import torch
 import torch.onnx 
 from torch.autograd import Variable
 
-from variables import input_size, model
+from variables import input_size, model, device
 
 
 #Function to Convert to ONNX 
-def convert_to_onnx(): 
-
-    # Define your execution device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+def convert_to_onnx():
 
     # set the model to inference mode 
     model.eval() 

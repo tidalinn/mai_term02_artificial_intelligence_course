@@ -14,7 +14,7 @@ from convert_to_onnx import convert_to_onnx
 def main():
 
     # Let's build our model
-    train(1) # 5
+    train(5)
     print('Finished Training')
 
     # Test which classes performed well

@@ -5,14 +5,11 @@ import torch
 from torch.autograd import Variable
 
 from cifar10_downloader import test_loader
-from variables import number_of_labels, batch_size, classes, model
+from variables import number_of_labels, batch_size, classes, model, device
 
 
 # Function to test what classes performed well
 def test_classes():
-
-    # Define your execution device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     class_correct = list(0. for i in range(number_of_labels))
     class_total = list(0. for i in range(number_of_labels))

@@ -1,11 +1,15 @@
 '''variables module
 '''
 
+import torch
 import torch.nn as nn
 from torch.optim import Adam
 
 from Network import Network
 
+
+# Define your execution device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # CIFAR10 dataset consists of 50K training images. We define the batch size of 10 to load 5,000 batches of images.
 batch_size = 10

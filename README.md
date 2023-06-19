@@ -20,7 +20,6 @@ Contains folders and files with laboratory works.
 
 ### Folders
 
-* `seminars` - stores files with tasks dealed with during seminars
 * `utils` - stores files with default funcs
 
 

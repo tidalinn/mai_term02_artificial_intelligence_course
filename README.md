@@ -25,11 +25,7 @@ Contains folders and files with laboratory works.
 
 
 ### Files
-<<<<<<< HEAD
-* `01_laboratory_work` - stores laboratory work on "KNeighboursClassifier" 
-=======
-* `01_laboratory_work` - stores laboratory work on "metric learning algorithms" 
->>>>>>> be2f152102f98a2c9effd43a61d31f4eb5494b63
+* `01_laboratory_work` - stores laboratory work on "metric learning algorithms with KNeighborsClassifier" 
 * `02_laboratory_work` - stores laboratory work on "DecesionTreeClassifier" 
 * `03_laboratory_work` - stores laboratory work on "RandomForestClassifier"
 * `04_laboratory_work` - stores laboratory work on "DeepFake"

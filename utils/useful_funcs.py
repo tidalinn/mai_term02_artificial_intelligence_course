@@ -1,7 +1,9 @@
 '''useful functions module
 '''
 
+from typing import List
 import os
+import random
 
 
 # folders content counting
@@ -33,3 +35,19 @@ def walk_through_dir(target_dir: str) -> None:
             counter += 1
         
         total_img += len(filenames)
+        
+        
+# random image src generation
+def get_random_images(path: str, n_images: int = 1) -> List[str]:
+    images = []
+    
+    for i in range(n_images):
+        random_label = random.choice(os.listdir(path))
+        random_path = os.path.join(path, random_label)
+
+        random_image = random.choice(os.listdir(random_path))
+        image_path = os.path.join(random_path, random_image)
+        
+        images.append(image_path)
+    
+    return images

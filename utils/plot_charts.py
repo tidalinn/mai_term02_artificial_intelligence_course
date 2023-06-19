@@ -11,13 +11,15 @@ import contextlib
 from PIL import Image
 
 from tqdm.notebook import tqdm
-from typing import List, Dict
+from typing import List, Dict, Mapping
 import random
 import glob
 import os
 import pathlib
 
 from mlxtend.plotting import plot_decision_regions
+
+from utils.useful_funcs import get_random_images
 
 
 # HEX colors generator
@@ -278,3 +280,43 @@ def plot_random_image(target_dir: str,
     plt.imshow(img)
     
     print(f'Размерность изображения {img.shape} -> [height, width, color_channels]')
+    
+    
+# image predictions plotting
+def plot_image_predictions(model, train: Mapping, path: str, n_images: int = 6) -> None:
+    font_s = 12
+    cols = 5
+    
+    if n_images % cols != 0:
+        if n_images < cols:
+            n_images = cols
+        else:
+            n_images = (n_images // cols) * cols 
+            
+        print(f'Для корректной взуализации значение n_images было установлено как кратное {cols}')
+    
+    images = get_random_images(path, n_images)
+    true_labels = [pathlib.Path(path).parent.stem 
+                   for path in get_random_images(path, n_images)]
+    
+    fig = plt.figure(figsize=(16, n_images / 2))
+    
+    rows = n_images // cols
+    
+    if rows == 0:
+        rows = 1
+    
+    for i, image in enumerate(images):
+        fig.add_subplot(rows, cols, i+1)
+        
+        pred = train(model, images[i])
+        
+        img = Image.open(images[i])
+        
+        plt.imshow(img)
+        plt.axis('off')
+        
+        plt.title(f'Прогноз: {pred[0]} \nКласс: {true_labels[i]}', 
+                  fontsize=font_s-2)
+        
+        plt.tight_layout()

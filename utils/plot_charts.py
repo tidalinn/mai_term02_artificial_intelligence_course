@@ -296,8 +296,7 @@ def plot_image_predictions(model, train: Mapping, path: str, n_images: int = 6) 
         print(f'Для корректной взуализации значение n_images было установлено как кратное {cols}')
     
     images = get_random_images(path, n_images)
-    true_labels = [pathlib.Path(path).parent.stem 
-                   for path in get_random_images(path, n_images)]
+    true_labels = [pathlib.Path(path).parent.stem for path in images]
     
     fig = plt.figure(figsize=(16, n_images / 2))
     

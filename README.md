@@ -27,7 +27,7 @@ Contains folders and files with laboratory works.
 * `01_laboratory_work` - stores laboratory work on "metric learning algorithms with KNeighborsClassifier" 
 * `02_laboratory_work` - stores laboratory work on "DecisionTreeClassifier" 
 * `03_laboratory_work` - stores laboratory work on "RandomForestClassifier"
-* `04_laboratory_work` - stores laboratory work on "DeepFake"
+* `04_laboratory_work` - stores laboratory work on "DeepFake" [not implemented yet]
 * `05_laboratory_work` - stores laboratory work on "RANSAC"
 * `06_laboratory_work` - stores laboratory work on "ONNX"
 * `07_laboratory_work` - stores laboratory work on "homography"
